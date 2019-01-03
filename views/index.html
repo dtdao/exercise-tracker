@@ -1,0 +1,81 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css"> 
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1><strong>Exercise Tracker</strong></h1>
+        <form id="new-user-form" action="api/exercise/new-user/" method="post">
+          <label for="new-user">
+            <h2><strong>Create a New User</strong></h2>
+          </label><br>
+          <code>POST /api/exercise/new-user</code>       
+          <div class="form-group">
+            <input type="text" class="form-control" id="username" placeholder="username" name="username">
+          </div>                                                                                                                                                        
+          <button type="submit" class="btn btn-default">
+            Submit 
+          </button>
+        </form>
+      <form id="add-exercise-form" action="api/exercise/add/" method="post">
+        <div class="form-group">
+          <label for="add-exercise h2">
+            <h2>
+              <strong>Add new Exercise</strong>
+            </h2>
+          </label><br>
+          <code>POST /api/exercise/add</code>
+          <div class="form-group">
+            <input type="text" class="form-control" id="userId" placeholder="username*" name="username">
+            <input type="text" class="form-control" id="description" placeholder="description*" name="description">
+            <input type="text" class="form-control" id="duration" placeholder="duration*" name="duration">
+            <input type="text" class="form-control" id="date" placeholder="date (yyyy-mm-dd)" name="date">
+          </div>
+          <button type="submit" class="btn btn-default submit" name="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+      
+      <h4>
+        <strong>GET user's exercise log:</strong><code>GET api/exercise/log?{username}[&from][&end][&limit]</code>
+      </h4>
+      <h4>
+        <strong>{}</strong> = required, <strong>[]</strong> = optional
+      </h4>
+      <h4>
+        <strong>from, to</strong> = dates (yyyy-mm-dd), <strong>limit</strong> = number
+      </h4>
+    </div>
+      
+
+  </body>
+</html>

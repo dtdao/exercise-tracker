@@ -1,0 +1,20 @@
+#new-user-form, #add-exercise-form{
+  width: 500px;
+  display: inline-block;
+  background-color: yellow;
+  margin: 10px;
+}
+
+#userId, #description, #duration, #date, #username{
+  margin: 10px;
+  width: 480px;
+}
+
+.btn {
+  margin: 0px 10px 10px 10px;
+  width: 480px;
+}
+
+label, code {
+  margin: 10px;
+}
